@@ -1,0 +1,5 @@
+<div fxLayout="row" fxLayoutAlign="center center" fxFlex class="background-background-color">
+    <button mat-fab class="fixed-top" (click)="back()"><mat-icon>arrow_back</mat-icon></button>
+  <img *ngIf="image" [src]="image.img"/>
+  <loader *ngIf="!image"></loader>
+</div>

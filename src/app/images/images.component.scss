@@ -1,0 +1,45 @@
+:host{
+    width:100%;
+    height:100%;
+}
+img{
+    width:100%;
+}
+
+.fixed-bar{
+    position:absolute;
+    bottom:16px;
+    right:16px;
+}
+
+.background-image{
+    cursor: pointer;
+    position: relative;
+    // height: 300px;
+    // background-position: center;
+    // background-size: cover;
+    // background-repeat: no-repeat;
+    // transition: all .5s linear;
+
+    // background-position: center;
+    // background-size:cover;
+    // background-repeat: no-repeat;
+    // transition:all .5s linear;
+}
+
+.hover-placeholder{
+    position:absolute;
+    opacity:0;
+    background-color:rgba($color: #000000, $alpha: 0.5);
+    height:100%;
+    width:100%;
+    mat-icon{
+        width:auto;
+        height:auto;
+        font-size:60px;
+    }
+}
+
+.background-image:hover .hover-placeholder{
+    opacity:1;
+}

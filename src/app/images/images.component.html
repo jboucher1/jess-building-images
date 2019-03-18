@@ -1,0 +1,16 @@
+<div fxLayout="column" fxFlex class="background-background-color">
+  <loader fxFlex *ngIf="!loaded"></loader>
+  <cdk-virtual-scroll-viewport itemSize="100%" style="height:100vh;">
+    <div fxFlex class="scroll-container" *ngIf="loaded">
+      <div fxLayout="row wrap">
+        <div *cdkVirtualFor="let image of images | orderBy:orderKey:false" fxFlex.xs="100" fxFlex.sm="50" fxFlex="25"
+          fxLayoutAlign="center center" class="background-image" (click)="navigate(image)">
+          <img [src]="image.img" />
+          <div class="hover-placeholder noselect" fxLayout="row" fxLayoutAlign="center center">
+            <mat-icon>visibility</mat-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+  </cdk-virtual-scroll-viewport>
+</div>

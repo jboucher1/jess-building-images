@@ -1,0 +1,62 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+$primary: mat-palette($mat-blue, 700, 500, 900);
+$accent: mat-palette($mat-pink, 700, 500, 900);
+$theme: mat-dark-theme($primary, $accent);
+
+@include angular-material-theme($theme);
+
+@mixin theme-classes($theme){
+    $primary: map-get($theme, primary);
+    $accent: map-get($theme, accent);
+    $warn: map-get($theme, warn);
+    $background: map-get($theme, background);
+    $foreground: map-get($theme, foreground);
+
+    // theme text colors
+    .primary-color{
+        color: mat-color($primary);
+    }
+
+    .accent-color{
+        color: mat-color($accent);
+    }
+
+    // theme background colors
+    .primary-background-color{
+        background-color: mat-color($primary);
+        color: mat-color($foreground, text);
+    }
+    .accent-background-color{
+        background-color: mat-color($accent);
+        color: mat-color($foreground, text);
+    }
+
+    .background-background-color{
+        background-color: mat-color($background, background);
+        color:mat-color($foreground, text);
+    }
+
+    .background-dialog-color{
+        background-color: mat-color($background, dialog);
+        color:mat-color($foreground, text);
+    }
+
+    // themed active button colors
+    .active-theme:hover{
+        color: mat-color($accent);
+    }
+
+    .active-theme.active{
+        color: mat-color($accent);
+    }
+}
+
+@include theme-classes($theme);
+
+.light-theme{
+    $theme: mat-light-theme($primary, $accent);
+    @include angular-material-theme($theme);
+    @include theme-classes($theme);
+}
